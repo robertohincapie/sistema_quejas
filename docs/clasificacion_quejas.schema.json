@@ -1,0 +1,39 @@
+{
+  "type": "json_schema",
+  "name": "clasificacion_quejas",
+  "strict": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "resumen": {
+        "type": "string",
+        "description": "Resumen breve, objetivo y concreto de la solicitud."
+      },
+      "departamento": {
+        "type": "string",
+        "enum": [
+          "facturacion",
+          "cobranza",
+          "servicio_al_cliente",
+          "soporte"
+        ],
+        "description": "Departamento responsable de atender la solicitud."
+      },
+      "prioridad": {
+        "type": "string",
+        "enum": [
+          "bajo",
+          "medio",
+          "alto"
+        ],
+        "description": "Nivel de prioridad según el impacto en la continuidad del servicio."
+      }
+    },
+    "required": [
+      "resumen",
+      "departamento",
+      "prioridad"
+    ],
+    "additionalProperties": false
+  }
+}
